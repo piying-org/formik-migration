@@ -6,6 +6,7 @@ import { CheckboxesExample } from './Checkboxes-Example';
 import { DependentFieldsExample } from './Dependent-Fields-Example';
 import { DependentFieldsExampleAsync } from './Dependent-Fields-Example-Async';
 import { FieldArraysExample } from './Field-Arrays-Example';
+import { MaterialUI } from './Material-UI';
 import { PiyingPage } from './piying-page';
 import { RadioGroupExample } from './Radio-Group-Example';
 
@@ -57,6 +58,12 @@ const List = [
     from: 'https://formik.org/docs/examples/instant-feedback',
     to: '',
     Component: AccessibleInstantFeedbackExample,
+  },
+  {
+    label: 'Material UI',
+    from: 'https://formik.org/docs/examples/with-material-ui',
+    to: '',
+    Component: MaterialUI,
   },
 ];
 function App() {

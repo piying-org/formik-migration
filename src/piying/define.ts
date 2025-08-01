@@ -9,6 +9,7 @@ import { ValidatorWrapper } from './wrapper/validator-wrapper';
 import { FormHelp } from './form-help';
 import { MultiCheckbox } from './multi-checkbox';
 import { ArrayRwGroup } from './group/array-rw';
+import { MuiTextField } from './mui/input-text';
 
 export const fieldConfig = {
   types: {
@@ -21,6 +22,7 @@ export const fieldConfig = {
     tuple: { type: PiyingGroup },
     'multi-checkbox': { type: MultiCheckbox },
     'array-rw': { type: ArrayRwGroup },
+    'mui-string': { type: MuiTextField },
   },
   wrappers: {
     label: {

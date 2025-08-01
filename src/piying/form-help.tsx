@@ -13,7 +13,7 @@ export function FormHelp(props: FormHelpOptions) {
   let control = field.form.root;
   const value = useSignalToRef(control, (control) => control!.value$$());
 
-  const formatedHtml = useMemo(() => new JSONFormatter(value).render().outerHTML, [value]);
+  const formatedHtml = useMemo(() => new JSONFormatter(value).render(), [value]);
   const forceShowError = useSignalToRef(field, (field) => field.props()['forceShowError']);
   const hasError = useSignalToRef(control, (control) => !!control.errors);
   const isChangedStatus = useSignalToRef(control, (control) => control?.dirty$$() || control?.touched$$());
@@ -49,7 +49,14 @@ export function FormHelp(props: FormHelpOptions) {
   return (
     <>
       <div>
-        <div dangerouslySetInnerHTML={{ __html: formatedHtml }}></div>
+        <div
+          ref={(instance) => {
+            if (instance) {
+              instance.innerHTML = '';
+              instance.appendChild(formatedHtml);
+            }
+          }}
+        ></div>
         {forceShowError || (hasError && isChangedStatus) ? (
           <div>
             <label className="label">Form Error</label>

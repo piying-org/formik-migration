@@ -1,9 +1,9 @@
 import * as v from 'valibot';
 import { patchWrappers, setComponent, patchInputs, setWrappers, patchProps, patchAttributes, NFCSchema } from '@piying/view-core';
-import { fieldConfig } from './piying/define';
-import { CustomNgBuilder } from './piying/custom.builder';
+import { fieldConfig } from '../piying/define';
+import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';
-import { getId } from './piying/util/get-id';
+import { getId } from '../piying/util/get-id';
 
 const schema = v.pipe(
   v.object({

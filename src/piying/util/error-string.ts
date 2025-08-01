@@ -1,4 +1,3 @@
-import type { PiResolvedViewFieldConfig } from '@piying/view-react';
 import { summarize } from 'valibot';
 
 export function errorString(errors: any) {

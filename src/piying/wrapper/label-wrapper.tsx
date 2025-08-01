@@ -7,16 +7,16 @@ export function LabelWrapper(props: { children: any }) {
   const props2 = useSignalToRef(field, (field) => {
     return field.props();
   });
-  let attributes = useSignalToRef(field, (field) => field.attributes());
+  const attributes = useSignalToRef(field, (field) => field.attributes());
   const isRequired = useSignalToRef(field, (field) => !!field.form.control?.required$$());
 
-  let wrapperClass = useMemo(() => {
+  const wrapperClass = useMemo(() => {
     return clsx('flex gap-2', {
       'flex-col': props2['titlePosition'] === 'top',
       'items-center': props2['titlePosition'] !== 'top',
     });
   }, [props2['titlePosition']]);
-  let title = useMemo(() => props2['title'], [props2['title']]);
+  const title = useMemo(() => props2['title'], [props2['title']]);
   return (
     <>
       <div className={wrapperClass}>

@@ -1,5 +1,5 @@
 import * as v from 'valibot';
-import { setComponent, patchInputs, setWrappers, patchProps, NFCSchema, patchAsyncProps, asControl, valueChange } from '@piying/view-core';
+import { setComponent, NFCSchema, valueChange } from '@piying/view-core';
 import { fieldConfig } from '../piying/define';
 import { CustomNgBuilder } from '../piying/custom.builder';
 import { PiyingView } from '@piying/view-react';

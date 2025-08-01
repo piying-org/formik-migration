@@ -10,7 +10,7 @@ export function InputText(props: PiInputOptions) {
   useImperativeHandle(props[CVA], () => cva, [cva]);
   const textModel = useInputTextModel(cvaa, false);
   const field = useContext(PI_VIEW_FIELD_TOKEN)!;
-  let attributes = useSignalToRef(field, () => field?.attributes());
+  const attributes = useSignalToRef(field, () => field?.attributes());
 
   return (
     <>

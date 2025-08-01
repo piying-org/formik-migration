@@ -4,7 +4,7 @@ import { useCallback, useContext, useMemo } from 'react';
 export function ArrayRwGroup(props: { fields: PiResolvedViewFieldConfig[]; minLength: number }) {
   const field = useContext(PI_VIEW_FIELD_TOKEN)!;
   const props2 = useSignalToRef(field, (field) => field?.props());
-  let add = useCallback(() => {
+  const add = useCallback(() => {
     field.action.set(undefined);
   }, [field]);
 

@@ -1,6 +1,6 @@
 import type { ControlValueAccessor } from '@piying/view-core';
-import { CVA, useControlValueAccessor, useInputCheckboxModel } from '@piying/view-react';
-import { useCallback, useImperativeHandle, useMemo, useState } from 'react';
+import { CVA, useControlValueAccessor } from '@piying/view-react';
+import { useCallback, useImperativeHandle, useState } from 'react';
 
 interface PiInputOptions {
   [CVA]: React.RefObject<ControlValueAccessor>;
@@ -17,7 +17,7 @@ export function MultiCheckbox(props: PiInputOptions) {
   const valueChange2 = useCallback(
     (checked: boolean, index: number) => {
       selectedList[index] = checked;
-      setSelectedList((list) => {
+      setSelectedList(() => {
         return selectedList.slice();
       });
       cvaa.valueChange(selectedList.map((bool, index) => (bool ? props.options[index].value : undefined)).filter(Boolean));

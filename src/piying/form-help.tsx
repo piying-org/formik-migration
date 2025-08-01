@@ -1,8 +1,6 @@
-import type { ControlValueAccessor } from '@piying/view-core';
-import { CVA, PI_VIEW_FIELD_TOKEN, useControlValueAccessor, useInputTextModel, useSignalToRef } from '@piying/view-react';
-import { useCallback, useContext, useImperativeHandle, useMemo, useState } from 'react';
+import { PI_VIEW_FIELD_TOKEN, useSignalToRef } from '@piying/view-react';
+import { useCallback, useContext, useMemo, useState } from 'react';
 import JSONFormatter from 'json-formatter-js';
-import { summarize } from 'valibot';
 import { errorString } from './util/error-string';
 
 interface FormHelpOptions {}
@@ -10,7 +8,7 @@ export function FormHelp(props: FormHelpOptions) {
   const field = useContext(PI_VIEW_FIELD_TOKEN)!;
   const props2 = useSignalToRef(field, () => field?.props());
 
-  let control = field.form.root;
+  const control = field.form.root;
   const value = useSignalToRef(control, (control) => control!.value$$());
 
   const formatedHtml = useMemo(() => new JSONFormatter(value).render(), [value]);
@@ -45,7 +43,7 @@ export function FormHelp(props: FormHelpOptions) {
   const saveInit = useCallback(() => {
     setInitData(value);
   }, [value]);
-  let [isSubmitting, setSubmitting] = useState(false);
+  const [isSubmitting, setSubmitting] = useState(false);
   return (
     <>
       <div>

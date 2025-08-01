@@ -10,12 +10,15 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@piying/view-react": "^1.0.1",
+    "@piying/view-react": "^1.0.2",
     "@tailwindcss/vite": "^4.1.11",
     "@valibot/i18n": "^1.0.0",
+    "clsx": "^2.1.1",
     "daisyui": "^5.0.47",
+    "json-formatter-js": "^2.5.23",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "rxjs": "^7.8.2",
     "tailwindcss": "^4.1.11",
     "valibot": "^1.1.0"
   },
